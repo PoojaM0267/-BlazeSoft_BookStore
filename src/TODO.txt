@@ -14,7 +14,9 @@ TODO:
 10. delete confirmation
 11. see if can edit at the same index
 12.Form Placeholders  - done
-13. 
+13. Update Read ME
+14. Set up Firebase and Deploy
+
 
 
 
