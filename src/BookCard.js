@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 const BookCard = (props) => {
 
     const dispatch = useDispatch();
-    const {bookData} = props;
+    const {bookData, onBookClick} = props;
 
     const { 
         id, 
@@ -16,9 +16,14 @@ const BookCard = (props) => {
         description,
       } = bookData;
 
+      const handleBookClick = (id) => {
+        console.log(id);
+        onBookClick(id)
+      }
+
       const handleDelete = (id) => {
 
-        alert('clicked delete!')
+        //alert('clicked delete!')
         console.log(id);
 
         //dispatch delete book 
@@ -28,10 +33,10 @@ const BookCard = (props) => {
   return (
         <div className="border border-red-700 m-4 p-4 text-left  flex flex-row justify-between ">            
            
-                <div className='cursor-pointer hover:opacity-50'>
+                <div className='cursor-pointer hover:opacity-50' onClick={() => handleBookClick(id)}>
                     <h2 className="font-bold py-2 text-lg">{name}</h2>
                     <p  className="text-sm pr-4 my-2">{category}</p>  
-                    <p className="text-sm pr-4 my-2">{price}</p>
+                    <p className="text-sm pr-4 my-2">{'$ ' + price}</p>
                          
                 <div className="text-sm">
                     <span className="text-xs">
@@ -43,7 +48,7 @@ const BookCard = (props) => {
               
 
             {bookData && <div className=''>
-                <button onClick={() => handleDelete(id)} className='text-sm text-white rounded-md border border-white m-2 p-2 hover:border-yellow'>Delete</button>
+                <button onClick={() => handleDelete(id)} className='text-sm text-white rounded-md border border-white m-2 p-2 hover:border-red-700'>Delete</button>
             </div>}
             
           </div>

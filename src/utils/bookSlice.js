@@ -11,7 +11,9 @@ const bookSlice = createSlice({
     },
     reducers: {
         addBook: (state, action) => {
-            state.books.push(action.payload);
+            //state.books.push(action.payload); // adds to the end of the list
+            //state.books.unshift(action.payload);
+            state.books = [action.payload, ...state.books]
         },
         deleteBook : (state, action) => {
 
@@ -25,7 +27,19 @@ const bookSlice = createSlice({
             });           
 
         }, 
-        editBook : () => {
+        editBook : (state, action) => {
+            console.log('Edit book action.payload');
+            console.log(action.payload);
+
+            let bookCopy = state.books.filter(b => b.id !== action.payload.id);
+            bookCopy.push(action.payload);
+
+            state.books.length = 0;
+            // bookCopy.forEach(b => {
+            //     state.books.push(b);
+            // });
+
+            state.books = [...bookCopy];
 
         }
     }

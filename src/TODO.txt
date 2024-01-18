@@ -9,8 +9,12 @@ TODO:
 5. Set up redux store - done
 6. initialize book store with book list: done
 7. Implement Delete book - done
-8. implement edit book 
-9. add book form validations
+8. implement edit book - done
+9. add book form validations- done
+10. delete confirmation
+11. see if can edit at the same index
+12.Form Placeholders  - done
+13. 
 
 
 
