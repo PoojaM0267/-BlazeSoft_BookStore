@@ -13,10 +13,7 @@ const AddBook = (props) => {
     const  [bookDescription, setBookDescription] =  useState('');
     const [errorMessage, setErrorMessage] = useState(null);
 
-    //const [modalTitle, setModalTitle] = useState('');
-
-    const {toggleAddBook, isAddBook, bookToEdit} = props;
-    
+    const {toggleAddBook, isAddBook, bookToEdit} = props;    
 
     const booksList = useSelector((store) => store.book?.books);
 
@@ -44,7 +41,6 @@ const AddBook = (props) => {
     }
 
       // validate form
-
       const message = validateForm();
       setErrorMessage(message);
       if(message) return;
@@ -67,7 +63,7 @@ const AddBook = (props) => {
         // dispatch add action
         dispatch(addBook(book));
 
-        console.log('Book Added');
+       // console.log('Book Added');
     }
 
     const handleEditBook = (book) => {
@@ -150,7 +146,6 @@ const AddBook = (props) => {
                     placeholder='Book Description'
                      value={bookDescription} onChange={(e) => setBookDescription(e.target.value)}
                      />
-
                   </form>
                 </div>
 

@@ -17,14 +17,11 @@ const BookCard = (props) => {
       } = bookData;
 
       const handleBookClick = (id) => {
-        console.log(id);
         onBookClick(id)
       }
 
       const handleDelete = (id) => {
-
-        //alert('clicked delete!')
-        console.log(id);
+        //console.log(id);
 
         //dispatch delete book 
         dispatch(deleteBook(id));

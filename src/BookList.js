@@ -15,17 +15,11 @@ const BookList = () => {
 
 
     const handleBookClick = (id) => {
-        // open edit modal
-        console.log(id);
-
-        console.log('Edit Book');
         setIsAddBook(false);
         setShowAddBookModal(!showAddBookModal);
 
-
         // filter active or clicked book data and pas it to the modal and the flag
         let bookToEdit = booksList.filter(x => x.id == id)[0];
-        console.log(bookToEdit);
         setBookToEdit(bookToEdit);
 
     }
@@ -55,7 +49,6 @@ const BookList = () => {
         {           
            booksList?.map(book => <BookCard key={book.id} 
                                     bookData = {book}  
-                                    //onClick={() => toggleAddBookModal()}
                                     onBookClick={handleBookClick} // 
                                     />)
         }
